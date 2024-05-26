@@ -1,12 +1,15 @@
 #ifndef FILECHECKER_H
 #define FILECHECKER_H
-#include<filestate.h>
+#include <filestate.h>
+#include <QVector>
+#include <consoleprinter.h>
 
-class FileChecker
+
+class FileChecker: public QObject
 {
-
+    Q_OBJECT
 private:
-    QVector<FileState> states;
+    QVector<FileState> states1;
     void checkSize();
     void checkExist();
     void checkSizeByPosition(int position);
@@ -15,8 +18,9 @@ private:
 public:
     FileChecker();
     void check();
-    void add(const QString newPath){
-
-    };
-
+    void add(const QString newPath);
+signals:
+    void existSignal(QString path, bool existence);
+    void sizeSignal(QString path, qint64 size);
+};
 #endif // FILECHECKER_H

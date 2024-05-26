@@ -1,10 +1,10 @@
 #include "filestate.h"
 
-FileState::FileState(QString newPath){
+FileState::FileState(const QString newPath){
     QFileInfo state(newPath);
     path = newPath;
-    size =state.size();
-    exist =state.exists();
+    size = state.size();
+    exist = state.exists();
 }
 
 qint64 FileState::getSize(){
