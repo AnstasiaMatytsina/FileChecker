@@ -9,7 +9,7 @@ FileChecker::FileChecker()
 }
 
 void FileChecker::checkExistByPosition(int position){
-    FileState savedState = states1[position];
+    FileState savedState = states[position];
     FileState newState(savedState.getPath());
     if (savedState.getExists()!=newState.getExists()){
        existSignal(newState.getPath(), newState.getExists());
@@ -18,26 +18,25 @@ void FileChecker::checkExistByPosition(int position){
 }
 
 void FileChecker::changeStateByPosition(const FileState &newState, int position){
-    states1[position]=newState;
+    states[position]=newState;
 }
 
 void FileChecker::checkSize(){
-    for(int pos=0;pos<states1.count();pos++){
+    for(int pos=0;pos<states.count();pos++){
         checkSizeByPosition(pos);
     }
 }
 
 void FileChecker::checkExist(){
-    for(int pos=0;pos<states1.count();pos++){
+    for(int pos=0;pos<states.count();pos++){
         checkExistByPosition(pos);
     }
 }
 
 void FileChecker::checkSizeByPosition(int position){
-    FileState savedState= states1[position];
+    FileState savedState= states[position];
     FileState newState(savedState.getPath());
     if (savedState.getSize() != newState.getSize()){
-        cout << "dfsdf";
         sizeSignal(newState.getPath(), newState.getSize());
         changeStateByPosition(newState, position);
     }
@@ -45,7 +44,7 @@ void FileChecker::checkSizeByPosition(int position){
 
 void FileChecker::add(const QString newPath){
     FileState newstate(newPath);
-    states1.push_front(newstate);
+    states.push_front(newstate);
 }
 
 void FileChecker::check() {

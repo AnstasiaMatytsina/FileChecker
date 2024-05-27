@@ -9,7 +9,7 @@ class FileChecker: public QObject
 {
     Q_OBJECT
 private:
-    QVector<FileState> states1;
+    QVector<FileState> states;
     void checkSize();
     void checkExist();
     void checkSizeByPosition(int position);
