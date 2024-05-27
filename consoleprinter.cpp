@@ -6,12 +6,12 @@ using namespace std;
 
 void ConsolePrinter::printExistChanges(QString path, bool isExist){
     if(isExist){
-        wcout << path.toStdWString() << "exist";
+        wcout <<"File "<< path.toStdWString() << " exist"<<endl;
     } else {
-        wcout << path.toStdWString()<< "not exist";
+        wcout << path.toStdWString()<< " not exist"<<endl;
     }
 }
 
 void ConsolePrinter::printSizeChanges(QString path, qint64 size){
-    wcout<<path.toStdWString()<<"size is"<< size;
+    wcout<<"File "<<path.toStdWString()<<" size is "<< size<<endl;
 }
