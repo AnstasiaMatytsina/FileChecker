@@ -17,4 +17,5 @@
 При возникновении изменения состояния наблюдаемого файла ( возникновение события ), необходимо выводить на экран соответствующее сообщение.
 
 
-![UML 1 лаб](https://github.com/AnstasiaMatytsina/FileChecker/assets/99312295/6bc492e6-f68a-4732-80de-41900d5567b4)
+![UML 1 лабораторная](https://github.com/AnstasiaMatytsina/FileChecker/assets/99312295/b228c7b0-e470-4710-a899-820e281ee16e)
+
