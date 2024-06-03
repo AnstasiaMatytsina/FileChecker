@@ -16,4 +16,5 @@
 
 При возникновении изменения состояния наблюдаемого файла ( возникновение события ), необходимо выводить на экран соответствующее сообщение.
 
-![1lab_UML drawio](https://github.com/AnstasiaMatytsina/FileChecker/assets/99312295/c9c38c0f-b577-40d7-a589-c5136736fab2)
+
+![UML 1 лаб](https://github.com/AnstasiaMatytsina/FileChecker/assets/99312295/6bc492e6-f68a-4732-80de-41900d5567b4)
