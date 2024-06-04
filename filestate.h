@@ -12,6 +12,7 @@ public:
     qint64 getSize();
     QString getPath();
     bool getExists();
+    bool operator==(const FileState& file)const;
 private:
     qint64 size = 0;
     QString path = "";

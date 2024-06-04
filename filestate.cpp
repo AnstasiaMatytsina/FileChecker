@@ -18,3 +18,8 @@ QString FileState::getPath(){
 bool FileState::getExists(){
     return exist;
 }
+bool FileState::operator==(const FileState& file)const {
+    if (file.path == path)
+        return true;
+    return false;
+}

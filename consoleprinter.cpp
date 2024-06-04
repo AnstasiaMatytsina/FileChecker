@@ -4,14 +4,14 @@
 
 using namespace std;
 
-void ConsolePrinter::printExistChanges(QString path, bool isExist){
-    if(isExist){
-        wcout <<"File "<< path.toStdWString() << " exist"<<endl;
+void ConsolePrinter::printExistChanges(QString path, bool isExist, qint64 size){
+    if(isExist) {
+        cout <<"File "<< path.toStdString() << " exist, size is "<<size<<" byte"<<endl;
     } else {
-        wcout << path.toStdWString()<< " not exist"<<endl;
+        cout <<"File "<< path.toStdString()<< " not exist"<<endl;
     }
 }
 
 void ConsolePrinter::printSizeChanges(QString path, qint64 size){
-    wcout<<"File "<<path.toStdWString()<<" size is "<< size<<endl;
+    cout<<"File "<<path.toStdString()<<" size is "<< size<<" byte"<<endl;
 }

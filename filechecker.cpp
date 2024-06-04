@@ -12,7 +12,7 @@ void FileChecker::checkExistByPosition(int position){
     FileState savedState = states[position];
     FileState newState(savedState.getPath());
     if (savedState.getExists()!=newState.getExists()){
-       existSignal(newState.getPath(), newState.getExists());
+       existSignal(newState.getPath(), newState.getExists(), newState.getSize());
        changeStateByPosition(newState, position);
     }
 }
@@ -35,8 +35,9 @@ void FileChecker::checkExist(){
 
 void FileChecker::checkSizeByPosition(int position){
     FileState savedState= states[position];
+
     FileState newState(savedState.getPath());
-    if (savedState.getSize() != newState.getSize()){
+    if (savedState.getSize() != newState.getSize() && newState.getExists() && savedState.getExists()){
         sizeSignal(newState.getPath(), newState.getSize());
         changeStateByPosition(newState, position);
     }
@@ -50,4 +51,13 @@ void FileChecker::add(const QString newPath){
 void FileChecker::check() {
     checkExist();
     checkSize();
+}
+
+bool FileChecker::remove(const QString filePath) {
+    FileState remstate(filePath);
+    if(states.contains(remstate) ){
+        states.removeOne(remstate);
+        return true;
+    }
+    else return false;
 }
